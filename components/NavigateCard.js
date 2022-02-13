@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import tw from "tailwind-rn";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
@@ -6,6 +6,8 @@ import { GOOGLE_MAPS_APIKEY } from "@env";
 import { setDestination } from "../slices/navSlice";
 import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
+import NavFavorites from "./NavFavorites";
+import { Icon } from "react-native-elements";
 
 const NavigateCard = () => {
 
@@ -39,6 +41,7 @@ const NavigateCard = () => {
                         placeholder="Where To?"
                     />
                 </View>
+                <NavFavorites/>
             </View>
         </SafeAreaView>
     );
