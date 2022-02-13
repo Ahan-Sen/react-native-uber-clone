@@ -36,8 +36,8 @@ const HomeScreen = () => {
           onPress={(data, details = null) => {
             dispatch(
               setOrigin({
-                location: details && details.geometry.location,
-                description: data.description,
+                location:  details?.geometry?.location,
+                description: data?.description,
               })
             );
 
@@ -45,6 +45,7 @@ const HomeScreen = () => {
           }}
           returnKeyType={"search"}
           enablePoweredByContainer={false}
+          fetchDetails={true}
           minLength={2}
           query={{ key: GOOGLE_MAPS_APIKEY, language: "en" }}
           nearbyPlacesAPI="GooglePlacesSearch"
